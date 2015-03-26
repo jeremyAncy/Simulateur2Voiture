@@ -22,6 +22,7 @@ public class Voiture extends Observable {
 		notificationObservateur();
 	}
 
+
 	private void miseAJourPositionX() {
 		if (directionEnDegres == 0)
 			x += vitesseMetreSeconde;
@@ -71,18 +72,11 @@ public class Voiture extends Observable {
 	return directionEnDegres;
 	}
 
-    public void tournerADroite(){
-        directionEnDegres += 350;
-        directionEnDegres = directionEnDegres % 360;
-        System.out.println("droite, degré = " + directionEnDegres);
-    }
-
     public void tournerAGauche(){
         directionEnDegres += 90;
         directionEnDegres = directionEnDegres % 360;
-        x = ((int) Math.cos(directionEnDegres)) * vitesseMetreSeconde;
-        y = ((int) Math.sin(directionEnDegres)) * vitesseMetreSeconde;
-        System.out.println("gauche, degré = " + directionEnDegres+", X = "+x+", Y = "+y);
+        x = (int) (Math.cos(directionEnDegres*0.0174532925) * vitesseMetreSeconde);
+        y = (int)(Math.sin(directionEnDegres*0.0174532925) * vitesseMetreSeconde);
     }
 
     public int getY() {

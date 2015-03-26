@@ -50,8 +50,8 @@ public class CommandeVoiture extends JPanel implements ActionListener{
 		Object bouton = event.getSource();
         if (bouton == boutonAccelerer)
             maVoiture.accelerer();
-        else if(bouton == boutonDroite)
-            maVoiture.tournerADroite();
+        /*else if(bouton == boutonDroite)
+            maVoiture.tournerADroite();*/
         else if(bouton == boutonGauche)
             maVoiture.tournerAGauche();
         else

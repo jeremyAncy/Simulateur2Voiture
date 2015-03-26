@@ -82,17 +82,17 @@ public class TestVoiture {
 
     @Test
     public void testBase2D (){
-        //maVoiture.
         Voiture v = new Voiture(100,0,10);
-        assertEquals(100,v.getX());
+        v.miseAJourPosition();
+        assertEquals(110,v.getX());
     }
 
     @Test
     public void testDirection90Degres (){
         maVoiture.tournerAGauche();
-        //Voiture v = new Voiture(0,0, (int) (Math.PI/2),100);
+        maVoiture.miseAJourPosition();
         assertEquals(0,maVoiture.getX());
-        assertEquals(-100,maVoiture.getY());
+        assertEquals(10,maVoiture.getY());
     }
 
 
