@@ -21,6 +21,9 @@ public class IHMVoiture extends JFrame implements Observer{
 	private double paramatreConversionMetresPixels = 0.5;
 	private Voiture maVoiture;
 	private CommandeVoiture maCommandeVoiture;
+    private double x =200;
+    private double y =300;
+    private double radianConvert = 0.0174532925;
 	
 	private void initGraphique() {
 		this.setTitle("Simulateur de Voiture");
@@ -64,7 +67,11 @@ public class IHMVoiture extends JFrame implements Observer{
 	private void dessinerVoiture(Graphics contexteGraphique) {
 		int xMetres = maVoiture.getX();
 		int xPixel = calculerPositionPixels(xMetres);
+        double d = maVoiture.getDegres();
 		contexteGraphique.fillRect(xPixel, 300, 30, 15);
+        //contexteGraphique.drawLine(100,300, (int) x, (int) y);
+        /*x = 200 * Math.cos(d*radianConvert);
+        y = 300 * Math.sin(d * radianConvert);*/
 	}
 	
 }

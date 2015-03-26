@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Map;
+
 
 public class TestVoiture {
 	
@@ -77,5 +79,22 @@ public class TestVoiture {
 		assertEquals(0, maVoiture.getX());
 		
 	}
-	
+
+    @Test
+    public void testBase2D (){
+        //maVoiture.
+        Voiture v = new Voiture(100,0,10);
+        assertEquals(100,v.getX());
+    }
+
+    @Test
+    public void testDirection90Degres (){
+        maVoiture.tournerAGauche();
+        //Voiture v = new Voiture(0,0, (int) (Math.PI/2),100);
+        assertEquals(0,maVoiture.getX());
+        assertEquals(-100,maVoiture.getY());
+    }
+
+
+
 }
